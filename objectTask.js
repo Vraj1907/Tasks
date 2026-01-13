@@ -243,3 +243,20 @@ function flattenOneLevel(obj) {
 
 console.log(flattenOneLevel({ a: { b: 1 } }));
 
+function rename(){
+const obj = {
+        f_name : "Vraj",
+        l_name : "Patel",
+        age : 20
+}
+const obj2 ={
+    f_name : 'first_name',
+    l_name : "last_name",
+   
+}
+return Object.fromEntries(Object.entries(obj).map(([key,value])=>
+      [obj2[key] || key,value]
+))
+}
+console.log(rename());
+
