@@ -225,13 +225,21 @@ function object(){
 console.log(object())
 
 //12.Flatten one level of a nested object (e.g. { a: { b: 1 } } → { 'a.b': 1 }).
-function convert(){
-    const obj = {
-        a:{
-            b:1
-        }
+function flattenOneLevel(obj) {
+  let result = {};
 
+  for (let key in obj) {
+    if (typeof obj[key] === "object" && obj[key] !== null) {
+      for (let innerKey in obj[key]) {
+        result[`${key}.${innerKey}`] = obj[key][innerKey];
+      }
+    } else {
+      result[key] = obj[key];
     }
-    let res = Obje
+  }
 
-    }
+  return result;
+}
+
+console.log(flattenOneLevel({ a: { b: 1 } }));
+
