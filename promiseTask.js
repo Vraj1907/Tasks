@@ -119,7 +119,7 @@ endTask()
 // Step 4: Confirm order.
 function order() {
     return new Promise((resolve,reject) => {
-        let pizza = false;
+        let pizza = true;
         if (pizza) {
             setTimeout(() => {
                 console.log("Places an order");
